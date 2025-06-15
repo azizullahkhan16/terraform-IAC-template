@@ -2,7 +2,7 @@ resource "aws_db_instance" "mysql" {
   identifier              = "mysql-instance"
   engine                  = "mysql"
   engine_version          = "8.0.41"
-  db_name                 = "ShoppinglistApp"
+  db_name                 = "FitnessCenterDB"
   instance_class          = "db.t3.micro"
    storage_type            = "gp2"
   allocated_storage       = 10
@@ -11,7 +11,7 @@ resource "aws_db_instance" "mysql" {
   db_subnet_group_name    = var.rds_subnetgroup_name
   vpc_security_group_ids  = [var.rds_sg_id]
   skip_final_snapshot     = true
-  publicly_accessible     = false  # ✅ Must be false for private subnet
+  publicly_accessible     = false  
 }
 
 resource "aws_db_instance" "postgres" {
@@ -27,5 +27,5 @@ resource "aws_db_instance" "postgres" {
   db_subnet_group_name    = var.rds_subnetgroup_name
   vpc_security_group_ids  = [var.rds_sg_id]
   skip_final_snapshot     = true
-  publicly_accessible     = false  # ✅ Must be false for private subnet
+  publicly_accessible     = false 
 }

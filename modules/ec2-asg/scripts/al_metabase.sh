@@ -21,7 +21,7 @@ docker run -d -p 3000:3000 -e MB_DB_FILE=/metabase-data/metabase.db   -v /opt/me
 cat <<EOF | sudo tee /etc/nginx/conf.d/nodeapp.conf
 server {
     listen 80;
-    server_name metabase.azizullahkhan.tech;
+    server_name mb.azizullahkhan.tech;
     location / {
         proxy_pass http://127.0.0.1:3000;
         proxy_set_header Host \$host;

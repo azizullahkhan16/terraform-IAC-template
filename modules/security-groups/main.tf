@@ -43,14 +43,14 @@ resource "aws_security_group" "rds_sg" {
     from_port   = 3306
     to_port     = 3306
     protocol    = "tcp"
-    cidr_blocks = ["172.31.0.0/16"]  # Adjust for your internal app subnet
+    security_groups = [aws_security_group.amazon_linux_sg.id]
   }
 
   ingress {
     from_port   = 5432
     to_port     = 5432
     protocol    = "tcp"
-    cidr_blocks = ["172.31.0.0/16"]
+    security_groups = [aws_security_group.amazon_linux_sg.id]
   }
 
   egress {

@@ -19,8 +19,8 @@ resource "aws_route53_record" "amazon_linux_2" {
 # A record for Metabase Instance
 resource "aws_route53_record" "metabase_instance" {
   zone_id = data.aws_route53_zone.main.zone_id
-  name    = "metabase.azizullahkhan.tech"
+  name    = "mb.azizullahkhan.tech"
   type    = "A"
   ttl     = 60
-  records = [var.ec2_instance_public_ip] // pass the public IP of the instance
+  records = [var.ec2_instance_public_ip]
 }

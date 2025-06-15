@@ -1,8 +1,8 @@
 resource "aws_subnet" "private_subnet_a" {
   vpc_id                  = var.vpc_id
-  cidr_block              = "172.31.144.0/20"       # Choose a CIDR within your VPC
-  availability_zone       = "us-east-1a"        # Adjust to your region/zone
-  map_public_ip_on_launch = false               # Critical for making it private
+  cidr_block              = "172.31.144.0/20"     
+  availability_zone       = "us-east-1a"        
+  map_public_ip_on_launch = false               
 
   tags = {
     Name = "my-private-subnet_a"
@@ -10,9 +10,9 @@ resource "aws_subnet" "private_subnet_a" {
 }
 resource "aws_subnet" "private_subnet_b" {
   vpc_id                  = var.vpc_id
-  cidr_block              = "172.31.128.0/20"       # Choose a CIDR within your VPC
-  availability_zone       = "us-east-1b"        # Adjust to your region/zone
-  map_public_ip_on_launch = false               # Critical for making it private
+  cidr_block              = "172.31.128.0/20"     
+  availability_zone       = "us-east-1b"        
+  map_public_ip_on_launch = false               
 
   tags = {
     Name = "my-private-subnet_b"
